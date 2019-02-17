@@ -1,10 +1,13 @@
 import React from 'react';
-import '../style/Login-Register.css'
+import { Link } from 'react-router-dom';
+import '../style/Login-Register.css';
+import HomeButton from '../HomeButton'
 
 class ProfLogin extends React.Component {
     render() {
         return (
             <div id="parent">
+                <HomeButton/>
                 <p>Login</p>
                 <div id="inputSpace">
                     <div className="Input-Header">
@@ -20,6 +23,7 @@ class ProfLogin extends React.Component {
                         </form>
                     </div>
                 </div>
+                <Link to='prof-register'>Register an Account</Link>
             </div>
         );
     }
