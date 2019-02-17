@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfLogin.css'
+import '../style/Login-Register.css'
 
 class ProfLogin extends React.Component {
     render() {

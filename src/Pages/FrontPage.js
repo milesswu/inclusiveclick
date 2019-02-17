@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './FrontPage.css';
-
+import '../style/FrontPage.css'
 class FrontPage extends React.Component {
     render() {
         return (
