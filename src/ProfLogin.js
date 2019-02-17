@@ -5,10 +5,11 @@ class ProfLogin extends React.Component {
     render() {
         return (
             <div id="parent">
-                <div className="Prof-Username">
+
+                <div className="Input-Header">
                     <p>username</p>
                 </div>
-                <div className="Prof-Pass">
+                <div className="Input-Header">
                     <p>password</p>
                 </div>
             </div>
