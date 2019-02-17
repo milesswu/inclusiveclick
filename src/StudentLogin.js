@@ -14,7 +14,7 @@ render() {
         <button type="submit">Submit</button>
         </form>
         </div>
-      
+        <Link to="/student-register">New Student?</Link>
       );
     }
   }

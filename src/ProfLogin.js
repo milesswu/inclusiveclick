@@ -9,6 +9,7 @@ class ProfLogin extends React.Component {
                 <div className="Input-Header">
                     <p>username</p>
                 </div>
+                
                 <div className="Input-Header">
                     <p>password</p>
                 </div>
