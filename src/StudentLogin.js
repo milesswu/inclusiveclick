@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 class StudentLogin extends React.Component {
 render() {
       return (
@@ -13,8 +14,8 @@ render() {
 
         <button type="submit">Submit</button>
         </form>
+        <Link to="/student-register">New Student?</Link>
         </div>
-      
       );
     }
   }
