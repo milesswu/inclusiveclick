@@ -5,13 +5,20 @@ class ProfLogin extends React.Component {
     render() {
         return (
             <div id="parent">
-
-                <div className="Input-Header">
-                    <p>username</p>
-                </div>
-                
-                <div className="Input-Header">
-                    <p>password</p>
+                <p>Login</p>
+                <div id="inputSpace">
+                    <div className="Input-Header">
+                        <p>username</p>
+                    </div>
+                    <form>
+                        <input type="text" name="username" placeholder="username" required/>
+                    </form>
+                    <div className="Input-Header">
+                        <p>password</p>
+                        <form>
+                        <input type="password" name="password" placeholder="password" required/>
+                        </form>
+                    </div>
                 </div>
             </div>
         );
