@@ -8,8 +8,31 @@ render() {
          <ul>
              <li>CS 32</li>
          </ul>
-  <Popup trigger={<button> Add Courses</button>} position="right center">
-    <div>Code</div>
+         <Popup trigger={<button className="button"> Add Course </button>} modal>
+    {close => (
+      <div className="modal">
+        <a className="close" onClick={close}>
+          &times;
+        </a>
+        <div className="header"> Modal Title </div>
+        <div className="content">
+          {' '}
+        Class Code: 
+        </div>
+        <div className="actions">
+         <input type= "text"/>
+          <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ')
+              close()
+            }}
+          >
+            close modal
+          </button>
+        </div>
+      </div>
+    )}
   </Popup>
 );
           </div>
