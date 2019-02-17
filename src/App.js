@@ -1,11 +1,13 @@
-import React from 'react';
-import FrontPage from './FrontPage';
+import React, { Component } from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory} from 'react-router'
+import './App.css';
+import Routes from './Routes';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      <div className="App">
-        <FrontPage/>
+      <div>
+        <Routes/>
       </div>
     );
   }
