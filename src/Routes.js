@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import FrontPage from './FrontPage';
-import ProfLogin from './ProfLogin';
-import StudentLogin from './StudentLogin';
-import StudentRegister from './StudentRegister';
-import StudentCourses from './StudentCourses';
+import FrontPage from './Pages/FrontPage';
+import ProfLogin from './Pages/ProfLogin';
+import StudentLogin from './Pages/StudentLogin';
+import StudentRegister from './Pages/StudentRegister';
+import StudentCourses from './Pages/StudentCourses';
 
 class Routes extends React.Component {
     render() {
