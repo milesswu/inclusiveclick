@@ -1,6 +1,7 @@
 import React from 'react';
+import Popup from "reactjs-popup";
 class StudentCourses extends React.Component {
-    
+
 render() {
       return (
           <div>
