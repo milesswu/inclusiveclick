@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FrontPage.css';
 
 class FrontPage extends React.Component {
@@ -12,7 +13,10 @@ class FrontPage extends React.Component {
                 </div>
 
                 <div className="FrontPage-Prof">
-                    <p>placeholder</p>
+                    <Link to='/prof-login'>Go to Prof Login</Link>
+                </div>
+                <div className="FrontPage-Stud">
+                    <Link to='/student-login'>Go to Student Login</Link>
                 </div>
             </div>
         );
