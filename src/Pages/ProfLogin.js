@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style/Login-Register.css';
-import HomeButton from '../HomeButton'
 
 class ProfLogin extends React.Component {
     render() {
         return (
             <div id="parent">
-                <HomeButton/>
                 <p>Login</p>
                 <div id="inputSpace">
                     <div className="Input-Header">
