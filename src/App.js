@@ -1,11 +1,14 @@
-import React from 'react';
-import FrontPage from './FrontPage';
+import React, { Component } from 'react';
+import './App.css';
+import Routes from './Routes';
+import HomeButton from './HomeButton'
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      <div className="App">
-        <FrontPage/>
+      <div>
+        <HomeButton/>
+        <Routes/>
       </div>
     );
   }
