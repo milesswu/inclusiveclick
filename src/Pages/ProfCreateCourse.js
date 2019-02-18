@@ -1,8 +1,8 @@
 import React from 'react';
 
 class ProfCreateCourse extends React.Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
     this.state={
         professor: null,
         class: null,
@@ -10,11 +10,8 @@ class ProfCreateCourse extends React.Component {
         north: 120.1,
         west:  93.93
     }
-
   this.handleChange = this.handleChange.bind(this);
-  this.handleSubmit = this.handleSubmit.bind(this);
   this.submitData = this.submitData.bind(this);
-
 }
 
 async submitData(event) {
@@ -22,10 +19,10 @@ async submitData(event) {
       method: "POST",
       body: JSON.stringify({
         professor: "Eggert",
-        class: "Engr 101",
-        students: ["222222222 ", "111222333 "],
-        north: this.state.north,
-        west:  this.state.west
+        class: "CS 183",
+        students: ["222222222", "111222333"],
+        north: parseInt(this.state.north),
+        west: parseInt(this.state.west)
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -34,31 +31,23 @@ async submitData(event) {
     const json = await res.json();
     console.log(json.success)
   }
-  
+
   handleChange(event) {    
     this.setState({ [event.target.name]: event.target.value });
  console.log("field updated")
-}
-  
-  handleSubmit(event) {
-    this.setState({
-      loading: false
-    })
-  }
+};
  
 render() {
       return (
          <div>
              
-        <form type = "text">
-        <label>
-            north:  
-        <input name = "north" value={this.state.north} onChange = {this.handleChange}/>
-        </label>
+        <form>
+        <label>    north:   </label>     
+        <input type = "number" step = "0.01" name = "north" value={this.state.north} onChange = {this.handleChange}/>
         <br/>
         <label>
             west:
-        <input name =  "west" value={this.state.west} onChange = {this.handleChange}/>
+        <input type = "number" step = "0.01" name =  "west" value={this.state.west} onChange = {this.handleChange}/>
         </label>
         </form>
         <button onClick = {this.submitData}>send some real data</button>
