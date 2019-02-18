@@ -32,7 +32,7 @@ class ProfCourses extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            //professor: "",
+            //classid: "",
             polls: []
         };
     }
@@ -46,7 +46,7 @@ class ProfCourses extends React.Component {
         const response = await fetch(getURL, {
             method: "POST",
             body: JSON.stringify({
-                professor: "Eggert"
+                classid: "cl-sdi3j43"
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ class ProfCourses extends React.Component {
             throwError(response);
         }
         const data = await response.json();
-        this.setState({ courses: data.classes });
+        this.setState({ polls: data.questions });
     }
     
    render() {
