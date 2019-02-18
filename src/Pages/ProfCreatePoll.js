@@ -26,7 +26,7 @@ async submitData() {
         class: "CS 131",
         title: this.state.title,
         A: this.state.A,
-        B: "??",
+        B: "lol",
         C: "Yes.js",
         D: "Lmao" 
       }),
@@ -36,10 +36,10 @@ async submitData() {
     });
     const json = await res.json();
   }
-  
+
 handleChange(event) {    
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.value;
     const name = target.name;
 
     this.setState({
@@ -60,12 +60,12 @@ render() {
         <form type = "text">
         <label>
             title:    
-        <input name = "title" onChange = {this.handleChange}/>
+        <input name = "title" value={this.state.title} onChange = {this.handleChange}/>
         </label>
         <br/>
         <label>
             answer A
-        <input name =  "A" onChange = {this.handleChange}/>
+        <input name =  "A" value={this.state.A} onChange = {this.handleChange}/>
         </label>
         </form>
         <button onClick = {this.submitData}>send some real data</button>
