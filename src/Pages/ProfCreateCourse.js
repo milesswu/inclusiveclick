@@ -5,10 +5,10 @@ class ProfCreateCourse extends React.Component {
         super(props)
     this.state={
         professor: null,
-        class: null,
+        class: "",
         students: ["222222222 ", "111222333 "],
-        north: 120,
-        west:  93.93
+        north: 0.0,
+        west: 100.0
     }
 
   this.handleChange = this.handleChange.bind(this);
@@ -22,16 +22,17 @@ async submitData(event) {
       method: "POST",
       body: JSON.stringify({
         professor: "Eggert",
-        class: "CS 69",
+        class: this.state.class,
         students: ["222222222 ", "111222333 "],
-        north: 120,
-        west:  93.93
+        north: this.state.north,
+        west:  this.state.west
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
     const json = await res.json();
+    console.log(json.success)
   }
   
   handleChange(event) {    
@@ -50,6 +51,11 @@ render() {
          <div>
              
         <form type = "text">
+        <label>
+            class: 
+        <input name = "class" value={this.state.class} onChange = {this.handleChange}/>
+        </label>
+        <br/>
         <label>
             north:  
         <input name = "north" value={this.state.north} onChange = {this.handleChange}/>
