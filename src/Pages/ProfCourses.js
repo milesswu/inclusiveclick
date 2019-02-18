@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+const getURL = 'https://rocky-badlands-35742.herokuapp.com/professor/class/list'
+
+
 class Course extends React.Component {
     constructor() {
         super();
@@ -14,21 +17,36 @@ class Course extends React.Component {
     render() {
         return (
             <div id="parent">
-                <p>{ this.props.course }</p>
+                <p>{this.state.className}</p>
             </div>
         );
     }
 }
 class ProfCourses extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+        this.state = {
+            courses: []
+        };
     }
+
+    async componentDidMount() {
+        this.loadCourses();
+    }
+
+    async loadCourses() {
+        const courses = await fetch(getURL, {
+            method: "POST",
+        });
+        this.setState({ courses });
+    }
+
     render() {
-        const classes = [{name:"CS 32"}, {name:"CS 131"}];
-        const listOfCourses = classes.map((c) => <li key={c.name}>{c.name}</li>);
+        const { courses } = this.state;
+        const listOfCourses = courses.map((c) => <li>{c}</li>)
         return (
             <div id="parent">
-                {listOfCourses}
+                {courses}
             </div>
         );
     }
