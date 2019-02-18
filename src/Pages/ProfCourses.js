@@ -38,8 +38,8 @@ class ProfCourses extends React.Component {
     }
     
     componentDidMount() {
-        console.log("mounted");
         this.loadCourses();
+        console.log(this.props.history.location.pathname);
     }
 
     async loadCourses() {

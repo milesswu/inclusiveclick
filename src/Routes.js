@@ -9,6 +9,7 @@ import StudentCourses from './Pages/StudentCourses';
 import ProfCourses from './Pages/ProfCourses';
 import ProfCreatePoll from './Pages/ProfCreatePoll';
 import ProfCreateCourse from './Pages/ProfCreateCourse';
+import ProfCoursePolls from './Pages/ProfCoursePolls';
 
 class Routes extends React.Component {
     render() {
@@ -17,8 +18,6 @@ class Routes extends React.Component {
                 <Route exact path='/' component={FrontPage}/>
                 <Route path='/prof-login' component={ProfLogin}/>
                 <Route path='/prof-register' component={ProfRegister}/>
-                <Route path='/student-login' component={StudentLogin}/>
-                <Route path='/student-register' component={StudentRegister}/>
                 <Route path='/prof-courses' component={ProfCourses}/>
                 <Route path='/prof-courses/create' component={ProfCreateCourse}/>
                 <Route path='/student-courses' component={StudentCourses}/>
@@ -26,6 +25,12 @@ class Routes extends React.Component {
                 <Route path='/prof-poll-create' component={ProfCreatePoll}/>
             
             </Switch>
+                <Route path='/prof-poll-create' component={ProfCreatePoll}/>
+                <Route path={ProfCourses.props.history.location.pathname} component={ProfCoursePolls}/>
+                <Route path='/student-login' component={StudentLogin}/>
+                <Route path='/student-register' component={StudentRegister}/>
+                <Route path='/student-courses' component={StudentCourses}/>                 
+           </Switch>
         );
     }
 }
