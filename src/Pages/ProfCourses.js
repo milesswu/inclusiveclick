@@ -4,46 +4,63 @@ const getURL = 'https://rocky-badlands-35742.herokuapp.com/professor/class/list'
 
 
 class Course extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            professor: "",
-            className: "",
-            students: [],
-            north: 0,
-            west: 0
-        };   
-    }
     render() {
         return (
             <div id="parent">
-                <p>{this.state.className}</p>
+                <Link to={'/prof-courses/' + this.props.classid}>{this.props.name}</Link>
             </div>
         );
     }
 }
+
+const throwError = async (resp) => {
+    const unknownErr = { errorMessage: 'Unknown error' };
+    try {
+        const body = await resp.json();
+        if (body.message !== undefined) {
+            let err = { errorMessage: body.message };
+            throw err;
+        } else {
+            throw unknownErr;
+        }
+    } catch (e) {
+        throw unknownErr;
+    }
+};
+
 class ProfCourses extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
+            //professor: "",
             courses: []
         };
     }
-
-    async componentDidMount() {
+    
+    componentDidMount() {
+        console.log("mounted");
         this.loadCourses();
     }
 
     async loadCourses() {
-        const courses = await fetch(getURL, {
+        const response = await fetch(getURL, {
             method: "POST",
+            body: JSON.stringify({
+                professor: "Eggert"
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
-        this.setState({ courses });
+        if (!response.ok) {
+            throwError(response);
+        }
+        const data = await response.json();
+        this.setState({ courses: data.classes });
     }
-
-    render() {
-        const { courses } = this.state;
-        const listOfCourses = courses.map((c) => <li>{c}</li>)
+    
+   render() {
+        const courses = this.state.courses.map(course => <Course {...course} key={course.classid} />);
         return (
             <div id="parent">
                 {courses}

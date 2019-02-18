@@ -17,7 +17,7 @@ class Routes extends React.Component {
                 <Route path='/prof-register' component={ProfRegister}/>
                 <Route path='/student-login' component={StudentLogin}/>
                 <Route path='/student-register' component={StudentRegister}/>
-                <Route path='prof-courses' component={ProfCourses}/>
+                <Route path='/prof-courses' component={ProfCourses}/>
                 <Route path='/student-courses' component={StudentCourses}/>
             </Switch>
         );
