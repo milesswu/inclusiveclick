@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class ProfCreatePoll extends React.Component {
         constructor(){
@@ -79,7 +80,8 @@ render() {
                 <input name =  "D" value={this.state.D} onChange = {this.handleChange}/>
             </label>
             </form>
-            <button onClick = {this.submitData}>send some real data</button>
+            <Link to="/prof-courses"><button onClick = {this.submitData}>send some real data</button></Link>
+            <Link to="/prof-courses"><button>Back</button></Link> 
         </div>
       );
     }

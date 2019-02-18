@@ -10,6 +10,7 @@ import ProfCourses from './Pages/ProfCourses';
 import ProfCreatePoll from './Pages/ProfCreatePoll';
 import ProfCreateCourse from './Pages/ProfCreateCourse';
 import ProfCoursePolls from './Pages/ProfCoursePolls';
+import StudentClicker from './Pages/StudentClicker';
 
 class Routes extends React.Component {
     render() {
@@ -24,7 +25,8 @@ class Routes extends React.Component {
                 <Route path='/student-login' component={StudentLogin}/>
                 <Route path='/student-register' component={StudentRegister}/>
                 <Route path='/student-courses' component={StudentCourses}/> 
-                <Route name="polls" path="/:classid" component={ProfCoursePolls}/>               
+                <Route name="polls" path="/:classid" component={ProfCoursePolls}/>
+                <Route name="StudPolls" path="/student-courses/:id" component={StudentClicker}/>              
            </Switch>
         );
     }
