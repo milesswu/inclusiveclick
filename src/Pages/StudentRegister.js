@@ -1,7 +1,7 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
 
 class StudentRegister extends React.Component {
+  /*
   async submitData() {
     const res = await fetch("url", {
       method: "POST",
@@ -16,6 +16,7 @@ class StudentRegister extends React.Component {
     });
     const json = await res.json();
   }
+  */
 render() {
       return (
          <div>

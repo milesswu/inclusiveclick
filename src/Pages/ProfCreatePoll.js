@@ -1,15 +1,28 @@
 import React from 'react';
 
 class ProfCreatePoll extends React.Component {
+    constructor(props){
+        super(props)
+
+    this.state={
+        professor: null,
+        class: null,
+        title: null,
+        A: null,
+        B: null,
+        C: null,
+        D: null,
+        loading: true,
+    }
   async submitData() {
     const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/question/create", {
       method: "POST",
       body: JSON.stringify({
-        professor: "Eggman",
-        class: "CS 69",
-        title: "Why is React a thing?",
-        A: "Tim Gu",
-        B: "Gim Tu",
+        professor: "Eggert",
+        class: "CS 131",
+        title: this.state.title,
+        A: this.state.A,
+        B: "??",
         C: "Yes.js",
         D: "Lmao" 
       }),
@@ -19,24 +32,29 @@ class ProfCreatePoll extends React.Component {
     });
     const json = await res.json();
   }
+  this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+}
+handleChange(event) {
+    this.setState({
+      A: event.target.value
+    });
+  }
+  handleSubmit(event) {
+    this.setState({
+      loading: false
+    })
+  }
+ 
 render() {
       return (
          <div>
-        <form method = "POST" id = "register" type = "text">
-        <p>Username:</p>
-        <input type="text" placeholder="Jrob" required/>
-        <p>Email:</p>
-        <input type = "text" placeholder = "JackRob42@ucla.edu" required/> 
-        <p>UID</p>
-        <input type = "text" placeholder = "424242424" id = "username" required/> 
-        <p>Password:</p>
-        <input type = "text" id = "password" required/> 
-        <p>Retype Password</p>
-        <input type = "text" id = "password2" required/> 
-        <input type="submit" value="Submit" id = "submit"/>
+        <form type = "text">
+        <input onChange = {this.handleChange}/>
+        
         </form>
+        <button onClick = {this.submitData}>send fake data</button>
         </div>
-      
       );
     }
   }
