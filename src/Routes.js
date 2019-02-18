@@ -8,6 +8,7 @@ import StudentRegister from './Pages/StudentRegister';
 import StudentCourses from './Pages/StudentCourses';
 import ProfCourses from './Pages/ProfCourses';
 import ProfCreatePoll from './Pages/ProfCreatePoll';
+import ProfCreateCourse from './Pages/ProfCreateCourse';
 
 class Routes extends React.Component {
     render() {
@@ -19,9 +20,11 @@ class Routes extends React.Component {
                 <Route path='/student-login' component={StudentLogin}/>
                 <Route path='/student-register' component={StudentRegister}/>
                 <Route path='/prof-courses' component={ProfCourses}/>
+                <Route path='/prof-courses/create' component={ProfCreateCourse}/>
                 <Route path='/student-courses' component={StudentCourses}/>
                 <Route path='/courses' component={StudentCourses}/>
                 <Route path='/prof-poll-create' component={ProfCreatePoll}/>
+            
             </Switch>
         );
     }
