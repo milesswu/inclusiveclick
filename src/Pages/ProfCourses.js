@@ -7,7 +7,7 @@ class Course extends React.Component {
     render() {
         return (
             <div id="parent">
-                <Link to={'/prof-courses/' + this.props.classid}>{this.props.name}</Link>
+                <Link to="polls" params={{ classid: '' + this.props.classid}}>{this.props.name}</Link>
             </div>
         );
     }
