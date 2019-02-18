@@ -7,7 +7,7 @@ class Poll extends React.Component {
     render() {
         return (
             <div id="parent">
-                <Link to={'/prof-courses/polls/' + this.props.pollid}>{this.props.date}</Link>
+                <Link to={'/prof-courses/polls/' + this.props.questionid}>{this.props.title}</Link>
             </div>
         );
     }
@@ -59,7 +59,7 @@ class ProfCourses extends React.Component {
     }
     
    render() {
-        const polls = this.state.polls.map(poll => <Poll {...poll} key={course.pollid} />);
+        const polls = this.state.polls.map(poll => <Poll {...poll} key={poll.questionid} />);
         return (
             <div id="parent">
                 {polls}

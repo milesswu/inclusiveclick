@@ -20,7 +20,7 @@ class Routes extends React.Component {
                 <Route path='/prof-register' component={ProfRegister}/>
                 <Route path='/prof-courses' component={ProfCourses}/>
                 <Route path='/prof-courses/create' component={ProfCreateCourse}/>
-                <Route path={ProfCourses.props.history.location.pathname} component={ProfCoursePolls}/>
+                <Route path='{ProfCourses.props.history.location.pathname}' component={ProfCoursePolls}/>
                 <Route path='/prof-poll-create' component={ProfCreatePoll}/>                
                 <Route path='/student-login' component={StudentLogin}/>
                 <Route path='/student-register' component={StudentRegister}/>
