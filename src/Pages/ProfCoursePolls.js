@@ -38,7 +38,6 @@ class ProfCourses extends React.Component {
     }
     
     componentDidMount() {
-        console.log("mounted");
         this.loadPolls();
     }
 
@@ -63,7 +62,7 @@ class ProfCourses extends React.Component {
         const polls = this.state.polls.map(poll => <Poll {...poll} key={course.pollid} />);
         return (
             <div id="parent">
-                {courses}
+                {polls}
             </div>
         );
     }
