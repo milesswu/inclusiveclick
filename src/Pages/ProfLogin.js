@@ -21,7 +21,7 @@ class ProfLogin extends React.Component {
                         </form>
                     </div>
                 </div>
-                <Link to='prof-register'>Register an Account</Link>
+                <Link to='/prof-courses'><button>Login</button></Link>
             </div>
         );
     }

@@ -7,7 +7,7 @@ class Course extends React.Component {
     render() {
         return (
             <div id="parent">
-                <Link to={'/prof-courses/' + this.props.classid}>{this.props.name}</Link>
+                <Link to="polls" params={{ classid: '' + this.props.classid}}>{this.props.name}</Link>
             </div>
         );
     }
@@ -38,8 +38,8 @@ class ProfCourses extends React.Component {
     }
     
     componentDidMount() {
-        console.log("mounted");
         this.loadCourses();
+        console.log(this.props.history.location.pathname);
     }
 
     async loadCourses() {
@@ -64,6 +64,7 @@ class ProfCourses extends React.Component {
         return (
             <div id="parent">
                 {courses}
+                <Link to="/prof-courses/create"><button>Add New Course</button></Link>
             </div>
         );
     }

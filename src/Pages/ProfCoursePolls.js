@@ -7,7 +7,7 @@ class Poll extends React.Component {
     render() {
         return (
             <div id="parent">
-                <Link to={'/prof-courses/polls/' + this.props.pollid}>{this.props.name}</Link>
+                <Link to={'/prof-courses/polls/' + this.props.questionid}>{this.props.title}</Link>
             </div>
         );
     }
@@ -32,21 +32,20 @@ class ProfCourses extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            //professor: "",
+            //classid: "",
             polls: []
         };
     }
     
     componentDidMount() {
-        console.log("mounted");
-        this.loadCourses();
+        this.loadPolls();
     }
 
-    async loadCourses() {
+    async loadPolls() {
         const response = await fetch(getURL, {
             method: "POST",
             body: JSON.stringify({
-                professor: "Eggert"
+                classid: "cl-sdi3j43"
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -56,14 +55,14 @@ class ProfCourses extends React.Component {
             throwError(response);
         }
         const data = await response.json();
-        this.setState({ courses: data.classes });
+        this.setState({ polls: data.questions });
     }
     
    render() {
-        const courses = this.state.courses.map(poll => <Poll {...poll} key={course.pollid} />);
+        const polls = this.state.polls.map(poll => <Poll {...poll} key={poll.questionid} />);
         return (
             <div id="parent">
-                {courses}
+                {polls}
             </div>
         );
     }
