@@ -8,6 +8,7 @@ render() {
          <ul>
              <li>CS 32</li>
          </ul>
+         
          <Popup trigger={<button className="button"> Add Course </button>} modal>
     {close => (
       <div className="modal">
@@ -34,7 +35,7 @@ render() {
     )}
   </Popup>
           </div>
-      );
+      );     
     }
   }
   

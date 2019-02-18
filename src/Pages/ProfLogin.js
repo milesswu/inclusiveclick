@@ -1,5 +1,6 @@
 import React from 'react';
-import '../style/Login-Register.css'
+import { Link } from 'react-router-dom';
+import '../style/Login-Register.css';
 
 class ProfLogin extends React.Component {
     render() {
@@ -20,6 +21,7 @@ class ProfLogin extends React.Component {
                         </form>
                     </div>
                 </div>
+                <Link to='prof-register'>Register an Account</Link>
             </div>
         );
     }
