@@ -63,6 +63,7 @@ class ProfCourses extends React.Component {
         return (
             <div id="parent">
                 {polls}
+                <Link to="/prof-poll-create"><button>Create New Poll</button></Link>
             </div>
         );
     }
