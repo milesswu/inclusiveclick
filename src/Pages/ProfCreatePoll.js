@@ -1,14 +1,17 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
 
-class StudentRegister extends React.Component {
+class ProfCreatePoll extends React.Component {
   async submitData() {
-    const res = await fetch("url", {
+    const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/question/create", {
       method: "POST",
       body: JSON.stringify({
-        studentid: this.state.studentid,
-        questionid: "0",
-        answer: 0
+        professor: "Eggman",
+        class: "CS 69",
+        title: "Why is React a thing?",
+        A: "Tim Gu",
+        B: "Gim Tu",
+        C: "Yes.js",
+        D: "Lmao" 
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -38,4 +41,4 @@ render() {
     }
   }
   
-  export default StudentRegister;
+  export default ProfCreatePoll;
