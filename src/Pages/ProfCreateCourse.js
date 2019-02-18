@@ -13,9 +13,11 @@ class ProfCreateCourse extends React.Component {
 
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.submitData = this.submitData.bind(this);
+
 }
 
-async submitData() {
+async submitData(event) {
     const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/class/register", {
       method: "POST",
       body: JSON.stringify({
@@ -32,15 +34,10 @@ async submitData() {
     const json = await res.json();
   }
   
-handleChange(event) {    
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
+  handleChange(event) {    
+    this.setState({ [event.target.name]: event.target.value });
+ console.log("field updated")
+}
   
   handleSubmit(event) {
     this.setState({
