@@ -6,6 +6,7 @@ import ProfRegister from './Pages/ProfRegister';
 import StudentLogin from './Pages/StudentLogin';
 import StudentRegister from './Pages/StudentRegister';
 import StudentCourses from './Pages/StudentCourses';
+import ProfCourses from './Pages/ProfCourses';
 
 class Routes extends React.Component {
     render() {
@@ -16,7 +17,8 @@ class Routes extends React.Component {
                 <Route path='/prof-register' component={ProfRegister}/>
                 <Route path='/student-login' component={StudentLogin}/>
                 <Route path='/student-register' component={StudentRegister}/>
-                <Route path='/courses' component={StudentCourses}/>
+                <Route path='prof-courses' component={ProfCourses}/>
+                <Route path='/student-courses' component={StudentCourses}/>
             </Switch>
         );
     }
