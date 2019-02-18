@@ -51,13 +51,13 @@ render() {
              
         <form type = "text">
         <label>
-            title:    
-        <input name = "title" onChange = {this.handleChange}/>
+            north:  
+        <input name = "north" value={this.state.north} onChange = {this.handleChange}/>
         </label>
         <br/>
         <label>
-            answer A
-        <input name =  "A" onChange = {this.handleChange}/>
+            west:
+        <input name =  "west" value={this.state.west} onChange = {this.handleChange}/>
         </label>
         </form>
         <button onClick = {this.submitData}>send some real data</button>
