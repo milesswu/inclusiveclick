@@ -23,7 +23,7 @@ class FrontPage extends React.Component {
                 <br/>
                 <Link to='/student-courses'>Go to student courses (for testing purposes)</Link>
                 <br/>
-                <Link to='/prof-courses/create'>Go to create a course page (for testing)</Link>
+                <Link to='/prof-courses-create'>Go to create a course page (for testing)</Link>
                 </div>
             </div>
         );
