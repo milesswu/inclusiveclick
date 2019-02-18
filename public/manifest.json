@@ -1,6 +1,9 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "permissions":[
+    "https://rocky-badlands-35742.herokuapp.com/student/register"
+  ],
   "icons": [
     {
       "src": "favicon.ico",

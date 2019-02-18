@@ -14,7 +14,6 @@ render() {
         <a className="close" onClick={close}>
           &times;
         </a>
-        <div className="header"> Modal Title </div>
         <div className="content">
           {' '}
         Class Code: 
@@ -28,13 +27,12 @@ render() {
               close()
             }}
           >
-            close modal
+            🚮
           </button>
         </div>
       </div>
     )}
   </Popup>
-);
           </div>
       );
     }
