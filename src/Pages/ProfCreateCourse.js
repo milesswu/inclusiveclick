@@ -1,17 +1,14 @@
 import React from 'react';
 
-class ProfCreatePoll extends React.Component {
+class ProfCreateCourse extends React.Component {
     constructor(props){
         super(props)
     this.state={
         professor: null,
         class: null,
-        title: null,
-        A: null,
-        B: null,
-        C: null,
-        D: null,
-        loading: true,
+        students: ["222222222 ", "111222333 "],
+        north: 120,
+        west:  93.93
     }
 
   this.handleChange = this.handleChange.bind(this);
@@ -19,16 +16,14 @@ class ProfCreatePoll extends React.Component {
 }
 
 async submitData() {
-    const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/question/create", {
+    const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/class/register", {
       method: "POST",
       body: JSON.stringify({
         professor: "Eggert",
-        class: "CS 131",
-        title: this.state.title,
-        A: this.state.A,
-        B: "??",
-        C: "Yes.js",
-        D: "Lmao" 
+        class: "CS 69",
+        students: ["222222222 ", "111222333 "],
+        north: 120,
+        west:  93.93
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -73,4 +68,4 @@ render() {
       );
     }
 }
-  export default ProfCreatePoll;
+  export default ProfCreateCourse;

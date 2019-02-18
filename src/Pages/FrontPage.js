@@ -21,6 +21,7 @@ class FrontPage extends React.Component {
                 <div className="FrontPage-Prof">
                 <Link to='/prof-courses'>Go to prof courses (testing purposes)</Link><br/>
                 <Link to='/student-courses'>Go to student courses (for testing purposes)</Link>
+                <Link to='/prof-courses/create'>Go to create a course page (for testing)</Link>
                 </div>
             </div>
         );
