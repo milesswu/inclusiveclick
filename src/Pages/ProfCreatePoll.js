@@ -40,15 +40,7 @@ async submitData(event) {
 handleChange(event) {    
     this.setState({ [event.target.name]: event.target.value });
  console.log("field updated")
-}
-setAuthorState(event) {
-    let field = event.target.name;
-    let value = event.target.value;
-    this.state[field] = value;
-    return this.setState({author: this.state.author});
-  };
-
-  
+};
  
 render() {
       return (
