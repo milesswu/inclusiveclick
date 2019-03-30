@@ -15,7 +15,7 @@ class ProfCreateCourse extends React.Component {
   this.handleSubmit = this.handleSubmit.bind(this);
   this.submitData = this.submitData.bind(this);
 
-}
+  }
 
 async submitData(event) {
     const res = await fetch("https://rocky-badlands-35742.herokuapp.com/professor/class/register", {
